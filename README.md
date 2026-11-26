@@ -1,5 +1,8 @@
 # TSSI Safety PCB
 
+<img width="966" height="458" alt="3dpcb1" src="https://github.com/user-attachments/assets/7e18229d-a9ba-4e37-a563-5a4f46e0c509" />
+
+
 ## Project Overview
 
 A custom safety and fault detection PCB designed in KiCad
@@ -28,29 +31,40 @@ were independently developed as part of the onboarding project.
 
 ## System Architecture
 
+## System Architecture
+
 ### Power Distribution
 
 ```mermaid
-flowchart TD
-    A[12 V Battery] --> B[Reverse Polarity Protection]
-    B --> C[Protected Power Rail]
-    C --- D[TVS Protection]
-    C --> E[5 V Voltage Regulator]
-    E --> F[5 V Logic Supply]
+flowchart LR
+    A[12 V Battery] --> B[PMOSFET]
+    B --> C[Protected 12 V Rail]
+    C --- D[TVS Diode]
+    C --> E[5 V Regulator]
+    E --> F[5 V Rail]
+    F --> G[74HC00 VCC]
+    F --> H[Output Header]
 ```
 
 ### Fault Detection and Latching
 
 ```mermaid
-flowchart TD
-    A[BMS Fault Signal] --> C[Input Conditioning]
-    B[IMD Fault Signal] --> D[Input Conditioning]
-    C --> E[NAND-Based Fault Detection]
-    D --> E
-    E --> F[SR Latch]
-    G[Reset Circuit] --> F
-    F --> H[Q Output]
-    F --> I[Q Complement Output]
+flowchart LR
+    A[BMS Fault] --> B[Input Terminal]
+    B --> C[Voltage Divider]
+    C --> D[RC Filter]
+
+    E[IMD Fault] --> F[Input Terminal]
+    F --> G[Voltage Divider]
+    G --> H[RC Filter]
+
+    D --> I[Fault Detection]
+    H --> I
+
+    I --> J[SR Latch]
+    K[Reset Circuit] --> J
+    J --> L[Q / Q_NOT]
+    L --> M[Output Header]
 ```
 
 ## Hardware Design
@@ -119,11 +133,6 @@ The schematic and PCB layout were developed in KiCad.
 ### Back Copper Layer
 
 <img width="1535" height="854" alt="backpcb1" src="https://github.com/user-attachments/assets/f2c5228c-bf14-45e0-9ad2-8e37d6b0f155" />
-
-
-### 3D PCB Render
-
-<img width="966" height="458" alt="3dpcb1" src="https://github.com/user-attachments/assets/cea4e4e9-cc57-40d8-974c-cf0b53641aa3" />
 
 The native KiCad project, schematic, and PCB layout
 files are available in the [Hardware](Hardware/) directory.
