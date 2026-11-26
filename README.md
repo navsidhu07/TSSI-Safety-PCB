@@ -31,8 +31,6 @@ were independently developed as part of the onboarding project.
 
 ## System Architecture
 
-## System Architecture
-
 ### Power Distribution
 
 ```mermaid
