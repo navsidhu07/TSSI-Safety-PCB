@@ -1,4 +1,4 @@
-# TSSI Safety PCB
+# Tractive System Status Indicator Power & Safety Board
 
 <img width="966" height="458" alt="3dpcb1" src="https://github.com/user-attachments/assets/7e18229d-a9ba-4e37-a563-5a4f46e0c509" />
 
