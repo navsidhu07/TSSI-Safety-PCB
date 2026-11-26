@@ -108,19 +108,22 @@ The schematic and PCB layout were developed in KiCad.
 
 ### Schematic
 
-<!-- Insert schematic image here -->
+<img width="1141" height="784" alt="schematicpcb1" src="https://github.com/user-attachments/assets/c7578244-48ab-4f55-8408-9bc3af6d5f0b" />
+
 
 ### Front Copper Layer
 
-<!-- Insert front copper layer image here -->
+<img width="1537" height="840" alt="frontpcb1" src="https://github.com/user-attachments/assets/f4f546b4-b8c9-4121-9b8f-7871f9fffb57" />
+
 
 ### Back Copper Layer
 
-<!-- Insert back copper layer image here -->
+<img width="1535" height="854" alt="backpcb1" src="https://github.com/user-attachments/assets/f2c5228c-bf14-45e0-9ad2-8e37d6b0f155" />
+
 
 ### 3D PCB Render
 
-<!-- Insert 3D PCB render here -->
+<img width="966" height="458" alt="3dpcb1" src="https://github.com/user-attachments/assets/cea4e4e9-cc57-40d8-974c-cf0b53641aa3" />
 
 The native KiCad project, schematic, and PCB layout
 files are available in the [Hardware](Hardware/) directory.
